@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#F7F4ED">
+    <meta name="description" content="Explore how slope and y-intercept change a linear regression line.">
+    <title>Linear Regression — LearnAI.com.au</title>
+    <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="style/linearRegression.css">
+    <script src="ML/linearRegression.js" defer></script>
+  </head>
+  <body class="lesson-page">
+    <header class="site-header">
+      <a class="site-logo" href="index.html" aria-label="LearnAI.com.au home">LearnAI<span>.com.au</span></a>
+      <nav aria-label="Main navigation">
+        <a href="index.html#home">Home</a>
+        <a href="linear-regression.html#playground" aria-current="page">Explore</a>
+        <a href="index.html#about">About</a>
+      </nav>
+    </header>
+
+    <main id="playground" class="regression-main">
+      <a class="back-link" href="index.html">← Back to home</a>
+      <section class="lesson-intro">
+        <p class="eyebrow">Interactive lesson · Regression</p>
+        <h1>Shape the line.</h1>
+        <p>Adjust the slope and y-intercept. Watch how the line moves in relation to the data points.</p>
+      </section>
+
+      <section class="playground" aria-label="Linear regression playground">
+        <div class="graph-panel">
+          <div class="graph-heading">
+            <div>
+              <p class="eyebrow">Your model</p>
+              <h2>Line and data</h2>
+            </div>
+            <output id="equation" class="equation" aria-live="polite">y = 0.8x + 1</output>
+          </div>
+
+          <div class="chart-wrap">
+            <canvas
+              id="regression-chart"
+              role="img"
+              aria-label="Scatter plot showing data points and a line controlled by the slope and y-intercept sliders."
+            ></canvas>
+          </div>
+
+          <div class="legend">
+            <span><i class="legend-dot"></i>Observed data</span>
+            <span><i class="legend-line"></i>Your line</span>
+          </div>
+        </div>
+
+        <aside class="controls-panel" aria-label="Model controls">
+          <p class="eyebrow">Tune the model</p>
+          <h2>Try moving a slider</h2>
+          <p class="controls-hint">A line is described by <strong>y = mx + b</strong>.</p>
+
+          <label class="range-control" for="slope">
+            <span class="range-label">
+              Slope <span class="symbol">m</span>
+              <output id="slope-value" for="slope">0.8</output>
+            </span>
+            <input id="slope" type="range" min="-2" max="2" step="0.1" value="0.8">
+            <span class="range-ends"><span>−2</span><span>0</span><span>2</span></span>
+            <span class="control-explanation">How steep the line is, and which way it tilts.</span>
+          </label>
+
+          <label class="range-control" for="intercept">
+            <span class="range-label">
+              Y-intercept <span class="symbol">b</span>
+              <output id="intercept-value" for="intercept">1.0</output>
+            </span>
+            <input id="intercept" type="range" min="-5" max="5" step="0.1" value="1">
+            <span class="range-ends"><span>−5</span><span>0</span><span>5</span></span>
+            <span class="control-explanation">Where the line crosses the vertical axis.</span>
+          </label>
+
+          <button class="reset-button" id="reset" type="button">Reset line</button>
+        </aside>
+      </section>
+
+      <section class="learning-note">
+        <span class="note-mark" aria-hidden="true">i</span>
+        <p>
+          <strong>What to notice</strong><br>
+          Changing the slope rotates the line around its intercept. Changing the intercept shifts the whole line up or down.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

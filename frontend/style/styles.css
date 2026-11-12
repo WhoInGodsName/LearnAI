@@ -421,3 +421,74 @@ nav a[aria-current="page"] { box-shadow: 0 2px 0 var(--color-accent); }
 }
 
 
+
+/* Shared header sizing: keep navigation identical across every page. */
+.site-header {
+  box-sizing: border-box;
+  display: flex;
+  width: min(calc(100% - 3rem), var(--content-width));
+  min-height: 88px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-inline: auto;
+  padding: 0;
+  text-align: left;
+}
+
+.site-header .site-logo {
+  flex: 0 0 auto;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.site-header nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2.5rem);
+}
+
+.site-header nav a {
+  padding-block: .5rem;
+  font-size: .9rem;
+  line-height: 1.2;
+}
+
+@media (max-width: 600px) {
+  .site-header {
+    width: min(calc(100% - 2rem), var(--content-width));
+    min-height: 72px;
+    gap: 1rem;
+  }
+
+
+  .site-header nav {
+    gap: .9rem;
+  }
+
+  .site-header nav a {
+    font-size: .78rem;
+  }
+}
+
+/* Keep the navbar at the same width and link positions on every page. */
+.site-header nav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 16rem;
+  gap: .25rem;
+}
+
+.site-header nav a {
+  display: block;
+  text-align: center;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .site-header nav {
+    width: min(10rem, 42vw);
+    gap: .15rem;
+  }
+}
+
