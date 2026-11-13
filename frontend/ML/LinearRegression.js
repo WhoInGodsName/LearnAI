@@ -7,6 +7,8 @@
   const interceptValue = document.querySelector('#intercept-value');
   const equation = document.querySelector('#equation');
   const reset = document.querySelector('#reset');
+  const Error = document.getElementById('Error')
+  const Loss = document.getElementById('Loss')
 
   if (!canvas || !context || !slopeInput || !interceptInput) return;
 
@@ -23,6 +25,25 @@
     yMin: -5,
     yMax: 10
   };
+
+  function getError(){
+    let error = 0;
+
+    for(let i = 0; i < points.length; i++){
+      predicted = Number(slopeInput.value) * points[i][0] + Number(interceptInput.value);
+      error += ((points[i][0] - predicted)**2);
+    }
+    Error.textContent = error.toPrecision(4);
+
+    return error;
+  }
+
+  function getLoss(){
+    let error = getError();
+    let loss = (1/points.length) * error;
+
+    Loss.textContent = loss.toPrecision(4);
+  }
 
   function draw() {
     const rect = canvas.getBoundingClientRect();
@@ -145,6 +166,8 @@
       `y = ${slope.toFixed(1)}x ` +
       `${intercept < 0 ? '−' : '+'} ` +
       `${Math.abs(intercept).toFixed(1)}`;
+
+    getLoss();
   }
 
   slopeInput.addEventListener('input', draw);

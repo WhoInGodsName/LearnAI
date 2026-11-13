@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="style/styles.css">
     <link rel="stylesheet" href="style/linearRegression.css">
     <script src="ML/linearRegression.js" defer></script>
+     <!-- Load MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </head>
   <body>
     <header class="site-header">
@@ -21,9 +23,8 @@
     </header>
 
     <main id="playground" class="regression-main">
-      <a class="back-link" href="index.html">← Back to home</a>
+      <a class="back-link" href="explore.html">← Back to explore</a>
       <section class="lesson-intro">
-        <p class="eyebrow">Interactive lesson · Regression</p>
         <h1>What is Linear Regression?</h1>
         <p>Linear regression is the first pit stop we will be taking on this Machine Learning journey.
           This <strong>supervised</strong> Machine Learning model allows us to predict an output (dependant variable)
@@ -60,6 +61,14 @@
           <p class="eyebrow">Tune the model</p>
           <h2>Try moving a slider</h2>
           <p class="controls-hint">A line is described by <strong>y = mx + b</strong>.</p>
+
+          <!--Error-->
+          <span class="range-label">
+              Error (\( R^2 \)): <span class="symbol" id="Error"></span>
+          </span>
+          <span class="range-label">
+              Loss (Mean Error Squared): <span class="symbol" id="Loss"></span>
+          </span>
 
           <label class="range-control" for="slope">
             <span class="range-label">
