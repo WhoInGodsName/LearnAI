@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img">
+  <rect width="640" height="360" fill="#F1ECE2"/>
+  <g fill="#FFFFFF" stroke="#675647" stroke-width="4"><rect x="245" y="35" width="150" height="62" rx="18"/><rect x="90" y="160" width="150" height="62" rx="18"/><rect x="400" y="160" width="150" height="62" rx="18"/><rect x="55" y="270" width="130" height="55" rx="16"/><rect x="205" y="270" width="130" height="55" rx="16"/><rect x="365" y="270" width="130" height="55" rx="16"/><rect x="515" y="270" width="100" height="55" rx="16"/></g>
+  <g fill="none" stroke="#6C6E36" stroke-width="6" stroke-linecap="round"><path d="M320 97v28M320 125H165v35M320 125h155v35M165 222v24H120v24M165 246h110v24M475 222v24H430v24M475 246h90v24"/></g>
+  <g fill="#675647" font-family="system-ui,sans-serif" font-size="18" font-weight="700" text-anchor="middle"><text x="320" y="73">Feature?</text><text x="165" y="199">Yes</text><text x="475" y="199">No</text></g>
+  <g fill="#E3BD90"><circle cx="120" cy="298" r="8"/><circle cx="270" cy="298" r="8"/><circle cx="430" cy="298" r="8"/><circle cx="565" cy="298" r="8"/></g>
+</svg>

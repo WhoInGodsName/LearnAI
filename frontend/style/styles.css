@@ -492,3 +492,15 @@ nav a[aria-current="page"] { box-shadow: 0 2px 0 var(--color-accent); }
   }
 }
 
+
+/* Move the landing hero toward the top on tall, desktop screens. */
+@media (min-width: 601px) {
+  .hero {
+    align-items: flex-start;
+    padding-block: clamp(2rem, 6vh, 4rem) 6rem;
+  }
+
+  .hero-copy {
+    margin-top: 0;
+  }
+}

@@ -25,7 +25,7 @@
   function draw(time = 0) {
     ctx.clearRect(0, 0, width, height);
     const compact = width < 640;
-    const centerY = compact ? height * 0.61 : height * 0.62;
+    const centerY = compact ? height * 0.56 : height * 0.52;
     const amplitude = compact ? 28 : 43;
     const count = compact ? 15 : 21;
     const speed = reduceMotion.matches ? 0 : time * 0.00022;
@@ -70,3 +70,4 @@
   });
   resize();
 })();
+
