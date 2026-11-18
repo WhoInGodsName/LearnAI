@@ -269,3 +269,19 @@ input[type="range"]:active {
     height: 280px;
   }
 }
+/* Give the logistic probability plot more vertical room to show its S-shape. */
+.logistic-page .chart-wrap {
+  height: clamp(360px, 48vw, 500px);
+}
+
+@media (max-width: 760px) {
+  .logistic-page .chart-wrap {
+    height: 360px;
+  }
+}
+
+@media (max-width: 420px) {
+  .logistic-page .chart-wrap {
+    height: 320px;
+  }
+}
