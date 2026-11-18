@@ -71,7 +71,7 @@
 .equation {
   padding: .5rem .8rem;
   color: var(--color-accent);
-  background: #F0EFE5;
+  background: #FCE3E7;
   border-radius: .5rem;
   font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
   font-size: .95rem;
@@ -120,7 +120,7 @@
 
 .controls-panel {
   padding: clamp(1.25rem, 3vw, 2rem);
-  background: #F5F2EA;
+  background: #F7EAE6;
   border-left: 1px solid var(--color-border);
 }
 
@@ -214,7 +214,7 @@ input[type="range"]:active {
   margin: 1.4rem auto 0;
   padding: 1rem 1.2rem;
   color: var(--color-text-muted);
-  background: #F0EFE5;
+  background: #FCE3E7;
   border-radius: .65rem;
   font-size: .9rem;
   line-height: 1.6;
@@ -285,3 +285,9 @@ input[type="range"]:active {
     height: 320px;
   }
 }
+
+
+
+
+
+

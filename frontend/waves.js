@@ -48,7 +48,7 @@
         if (x === -20) ctx.moveTo(x, y);
         else ctx.lineTo(x, y);
       }
-      ctx.strokeStyle = `rgba(108, 110, 54, ${opacity})`;
+      ctx.strokeStyle = `rgba(66, 133, 244, ${opacity})`;
       ctx.lineWidth = 1;
       ctx.stroke();
     }
@@ -70,4 +70,9 @@
   });
   resize();
 })();
+
+
+
+
+
 

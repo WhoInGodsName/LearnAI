@@ -143,12 +143,12 @@
       const yPosition = py(probability);
 
       context.beginPath();
-      context.strokeStyle = '#D8D0C2';
+      context.strokeStyle = '#E7C7C1';
       context.moveTo(pad.left, yPosition);
       context.lineTo(width - pad.right, yPosition);
       context.stroke();
 
-      context.fillStyle = '#777168';
+      context.fillStyle = '#64504C';
       context.textAlign = 'right';
       context.textBaseline = 'middle';
       context.fillText(probability.toFixed(1), pad.left - 8, yPosition);
@@ -159,12 +159,12 @@
       const xPosition = px(x);
 
       context.beginPath();
-      context.strokeStyle = '#D8D0C2';
+      context.strokeStyle = '#E7C7C1';
       context.moveTo(xPosition, pad.top);
       context.lineTo(xPosition, height - pad.bottom);
       context.stroke();
 
-      context.fillStyle = '#777168';
+      context.fillStyle = '#64504C';
       context.textAlign = 'center';
       context.textBaseline = 'top';
       context.fillText(String(x), xPosition, height - pad.bottom + 8);
@@ -175,7 +175,7 @@
 
     // Draw the 0.5 decision threshold.
     context.beginPath();
-    context.strokeStyle = '#C0BDBC';
+    context.strokeStyle = '#E7C7C1';
     context.lineWidth = 1.5;
     context.setLineDash([6, 5]);
     context.moveTo(px(bounds.xMin), py(0.5));
@@ -200,7 +200,7 @@
       }
     }
 
-    context.strokeStyle = '#6C6E36';
+    context.strokeStyle = '#1F5FC9';
     context.lineWidth = 3;
     context.lineCap = 'round';
     context.stroke();
@@ -208,8 +208,8 @@
     // Plot observed data at their actual class labels, 0 or 1.
     for (const [x, actualClass] of points) {
       context.beginPath();
-      context.fillStyle = actualClass === 1 ? '#E3BD90' : '#675647';
-      context.strokeStyle = '#675647';
+      context.fillStyle = actualClass === 1 ? '#4285F4' : '#BC4639';
+      context.strokeStyle = '#37231F';
       context.lineWidth = 1.5;
       context.arc(px(x), py(actualClass), 5, 0, Math.PI * 2);
       context.fill();
@@ -240,4 +240,10 @@
   new ResizeObserver(draw).observe(canvas);
   draw();
 })();
+
+
+
+
+
+
 

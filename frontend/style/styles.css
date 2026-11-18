@@ -1,27 +1,32 @@
-/* LearnAI.com.au — warm, grounded learning theme
-   Palette sampled from the supplied reference. */
+/* LearnAI.com.au — vibrant academic learning theme
+   Cobalt blue, deep brown, rust, dusty rose, and warm cream palette. */
 
 :root {
   color-scheme: light;
 
   /* Palette */
-  --color-primary: #675647;      /* warm brown */
-  --color-primary-soft: #E3BD90; /* sand */
-  --color-neutral: #DFD3B5;      /* parchment */
-  --color-neutral-cool: #C0BDBC; /* stone */
-  --color-accent: #6C6E36;       /* olive */
-  --color-text: #3B3B3B;         /* charcoal */
+  --color-primary: #5C2018;
+  --color-primary-deep: #3F1711;      /* deep brown for controls */
+  --color-primary-soft: #D4A59A; /* dusty rose */
+  --color-neutral: #F3E0DC;      /* warm off-white */
+  --color-neutral-cool: #E7C7C1; /* warm grey */
+  --color-accent: #1F5FC9; /* dark blue for readable links and controls */
+  --color-highlight: #BC4639; /* rust-red highlight */
+  --color-blue: #4285F4; /* bright palette blue */
+  --color-highlight-soft: #F3E0DC;
+  --color-pink: #D4A59A; /* dusty rose */
+  --color-text: #37231F;         /* dark warm text */
 
   /* Semantic colors */
-  --color-page: #F8F6F1;
+  --color-page: #F3E0DC;
   --color-surface: #FFFFFF;
-  --color-surface-muted: #F1ECE2;
-  --color-text-muted: #68645E;
-  --color-border: #D8D0C2;
-  --color-focus: #6C6E36;
-  --color-success: #4F6B45;
-  --color-warning: #9A632B;
-  --color-error: #9A4238;
+  --color-surface-muted: #FAF3F0;
+  --color-text-muted: #64504C;
+  --color-border: #E7C7C1;
+  --color-focus: #4285F4;
+  --color-success: #25876F;
+  --color-warning: #B96C22;
+  --color-error: #B84A4A;
 
   /* Layout and shape */
   --content-width: 72rem;
@@ -29,7 +34,7 @@
   --radius-sm: 0.4rem;
   --radius-md: 0.75rem;
   --radius-lg: 1rem;
-  --shadow-card: 0 0.35rem 1.2rem rgb(59 59 59 / 8%);
+  --shadow-card: 0 0.35rem 1.2rem rgb(55 33 31 / 8%);
 
   /* Type */
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
@@ -49,14 +54,14 @@
 .hero-copy { width: min(100%, 38rem); margin-top: -2rem; }
 .eyebrow { margin: 0 0 1.1rem; color: var(--color-accent); font-size: .78rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
 h1 { margin: 0; color: var(--color-primary); font-size: clamp(3rem, 7vw, 6rem); line-height: .98; letter-spacing: -.075em; }
-h1 span { color: var(--color-accent); }
-.hero-description { max-width: 31rem; margin: 1.5rem 0 2rem; color: #655F56; font-size: clamp(1.05rem, 2vw, 1.2rem); line-height: 1.65; }
-.button { display: inline-flex; min-height: 3.1rem; align-items: center; gap: .8rem; padding: .7rem 1.2rem; color: white; background: var(--color-primary); border-radius: 999px; font-size: .95rem; font-weight: 750; text-decoration: none; transition: background-color .18s ease, transform .18s ease; }
-.button:hover { background: var(--color-accent); transform: translateY(-2px); }
+h1 span { color: var(--color-highlight); }
+.hero-description { max-width: 31rem; margin: 1.5rem 0 2rem; color: #64504C; font-size: clamp(1.05rem, 2vw, 1.2rem); line-height: 1.65; }
+.button { display: inline-flex; min-height: 3.1rem; align-items: center; gap: .8rem; padding: .7rem 1.2rem; color: white; background: var(--color-accent); border-radius: 999px; font-size: .95rem; font-weight: 750; text-decoration: none; transition: background-color .18s ease, transform .18s ease; }
+.button:hover { background: #174B9D; transform: translateY(-2px); }
 .button span { font-size: 1.2rem; }
 .scroll-hint { position: absolute; left: 0; bottom: 2rem; display: flex; align-items: center; gap: .7rem; color: var(--color-text-muted); font-size: .82rem; font-weight: 650; text-decoration: none; }
 .scroll-dot { width: .58rem; height: .58rem; border: 1.5px solid var(--color-accent); border-radius: 50%; }
-.next-section { position: relative; z-index: 1; min-height: 18rem; padding: 4rem max(1.5rem, calc((100% - var(--content-width)) / 2)); background: #fffdf9; border-top: 1px solid rgb(103 86 71 / 10%); }
+.next-section { position: relative; z-index: 1; min-height: 18rem; padding: 4rem max(1.5rem, calc((100% - var(--content-width)) / 2)); background: #FFFCFA; border-top: 1px solid rgb(55 33 31 / 10%); }
 .next-section h2 { max-width: 38rem; margin: 0; color: var(--color-primary); font-size: clamp(1.8rem, 4vw, 3rem); letter-spacing: -.045em; }
 .next-section > p:last-child { color: var(--color-text-muted); }
 
@@ -225,7 +230,7 @@ p {
   gap: 0.5rem;
   padding: 0.65rem 1rem;
   color: #fff;
-  background: var(--color-primary);
+  background: var(--color-accent);
   border: 2px solid transparent;
   border-radius: var(--radius-md);
   font-weight: 700;
@@ -235,7 +240,7 @@ p {
 
 .button:hover {
   color: #fff;
-  background: #514336;
+  background: #174B9D;
   transform: translateY(-1px);
 }
 
@@ -246,17 +251,17 @@ p {
 
 .button--accent:hover {
   color: #fff;
-  background: #55572A;
+  background: #174B9D;
 }
 
 .button--soft {
   color: var(--color-text);
-  background: var(--color-primary-soft);
+  background: var(--color-highlight);
 }
 
 .button--soft:hover {
   color: var(--color-text);
-  background: #D9AE7D;
+  background: #AA392F;
 }
 
 .button:disabled {
@@ -307,7 +312,7 @@ textarea {
 
 .array-cell.is-active,
 .node.is-active {
-  background: var(--color-primary-soft);
+  background: var(--color-highlight);
   border-color: var(--color-primary);
   transform: translateY(-2px);
 }
@@ -353,16 +358,21 @@ textarea {
 }
 :root {
   color-scheme: light;
-  --color-primary: #675647;
-  --color-primary-soft: #E3BD90;
-  --color-neutral: #DFD3B5;
-  --color-neutral-cool: #C0BDBC;
-  --color-accent: #6C6E36;
-  --color-text: #3B3B3B;
-  --color-page: #F7F4ED;
+  --color-primary: #5C2018;
+  --color-primary-deep: #3F1711;
+  --color-primary-soft: #D4A59A;
+  --color-neutral: #F3E0DC;
+  --color-neutral-cool: #E7C7C1;
+  --color-accent: #1F5FC9; /* dark blue for readable links and controls */
+  --color-highlight: #BC4639; /* rust-red highlight */
+  --color-blue: #4285F4; /* bright palette blue */
+  --color-highlight-soft: #F3E0DC;
+  --color-pink: #D4A59A;
+  --color-text: #37231F;
+  --color-page: #F3E0DC;
   --color-surface: #FFFFFF;
-  --color-text-muted: #68645E;
-  --color-border: #D8D0C2;
+  --color-text-muted: #64504C;
+  --color-border: #E7C7C1;
   --content-width: 74rem;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-synthesis: none;
@@ -503,3 +513,47 @@ nav a[aria-current="page"] { box-shadow: 0 2px 0 var(--color-accent); }
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+/* Give the landing headline more presence without changing page structure. */
+.hero-copy {
+  width: min(100%, 64rem);
+}
+
+.hero-copy h1 {
+  max-width: 64rem;
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  line-height: .94;
+  letter-spacing: -.07em;
+}
+
+.hero-copy .hero-description {
+  max-width: 42rem;
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .hero-copy {
+    width: 100%;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.6rem, 10.5vw, 4.1rem);
+  }
+
+  .hero-copy .hero-description {
+    max-width: 32rem;
+    font-size: 1.1rem;
+  }
+}

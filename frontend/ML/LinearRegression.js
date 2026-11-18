@@ -74,8 +74,8 @@
       pad.top + (bounds.yMax - y) /
       (bounds.yMax - bounds.yMin) * plotH;
 
-    const tickColor = '#D8D0C2';
-    const labelColor = '#777168';
+    const tickColor = '#E7C7C1';
+    const labelColor = '#64504C';
 
     context.clearRect(0, 0, w, h);
     context.font = '11px system-ui, sans-serif';
@@ -141,7 +141,7 @@
     y2 = slope * x2 + intercept;
 
     context.beginPath();
-    context.strokeStyle = '#6C6E36';
+    context.strokeStyle = '#1F5FC9';
     context.lineWidth = 3;
     context.lineCap = 'round';
     context.moveTo(px(x1), py(y1));
@@ -151,8 +151,8 @@
     // Draw the observed data points.
     for (const [x, y] of points) {
       context.beginPath();
-      context.fillStyle = '#E3BD90';
-      context.strokeStyle = '#675647';
+      context.fillStyle = '#BC4639';
+      context.strokeStyle = '#5C2018';
       context.lineWidth = 1.5;
       context.arc(px(x), py(y), 5, 0, Math.PI * 2);
       context.fill();
@@ -182,3 +182,6 @@
   new ResizeObserver(draw).observe(canvas);
   draw();
 })();
+
+
+
