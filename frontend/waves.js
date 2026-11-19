@@ -49,7 +49,7 @@
         else ctx.lineTo(x, y);
       }
       ctx.strokeStyle = `rgba(66, 133, 244, ${opacity})`;
-      ctx.lineWidth = 1;
+      ctx.lineWidth = 3;
       ctx.stroke();
     }
     if (!reduceMotion.matches) frame = requestAnimationFrame(draw);
