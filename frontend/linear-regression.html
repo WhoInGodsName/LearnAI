@@ -76,7 +76,7 @@
 
           <label class="range-control" for="slope">
             <span class="range-label">
-              Slope <span class="symbol">m</span>
+              Slope <span class="symbol">\( \beta_1\)</span>
               <output id="slope-value" for="slope">0.8</output>
             </span>
             <input id="slope" type="range" min="-2" max="2" step="0.1" value="0.8">
@@ -86,7 +86,7 @@
 
           <label class="range-control" for="intercept">
             <span class="range-label">
-              Y-intercept <span class="symbol">b</span>
+              Y-intercept <span class="symbol">\( \beta_0\)</span>
               <output id="intercept-value" for="intercept">1.0</output>
             </span>
             <input id="intercept" type="range" min="-5" max="5" step="0.1" value="1">
@@ -100,6 +100,9 @@
 
       <section>
         <h1>What is <span>Σrror</span> and <span>Loss</span>?</h1>
+        <p>Without error or loss, our linear regression model would not be able to find its way to accurately representing our data!
+          Why is this the case?  How does it work?  Lets take a look!
+        </p>
       </section>
 
       <!-- <section class="learning-note">
