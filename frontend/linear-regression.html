@@ -48,7 +48,7 @@
 
           <div class="chart-wrap">
             <canvas
-              id="regression-chart"
+              id="regression-chart-1"
               role="img"
               aria-label="Scatter plot showing data points and a line controlled by the slope and y-intercept sliders."
             ></canvas>
@@ -66,13 +66,6 @@
           <!-- <p class="controls-hint">A line is described by <strong>y = mx + b</strong>.</p> -->
           <br>
           <br>
-          <!--Error-->
-          <span class="range-label">
-              Redidual Error (\( R^2 \)): <span class="symbol" id="Error"></span>
-          </span>
-          <span class="range-label">
-              Loss (Mean Error Squared): <span class="symbol" id="Loss"></span>
-          </span>
 
           <label class="range-control" for="slope">
             <span class="range-label">
@@ -105,6 +98,72 @@
         </p>
       </section>
 
+      <section class="playground" aria-label="Linear regression playground">
+        <div class="graph-panel">
+          <div class="graph-heading">
+            <div>
+              <p class="eyebrow">Linear model</p>
+              <h2>Evaluate the Error and Loss!</h2>
+            </div>
+            <output id="equation" class="equation" aria-live="polite">y = 0.8x + 1</output>
+          </div>
+
+          <div class="chart-wrap">
+            <canvas
+              id="regression-chart-2"
+              role="img"
+              aria-label="Scatter plot showing data points and a line controlled by the slope and y-intercept sliders."
+            ></canvas>
+          </div>
+
+          <div class="legend">
+            <span><i class="legend-dot"></i>Observed data</span>
+            <span><i class="legend-line"></i>Your line</span>
+          </div>
+        </div>
+
+        <aside class="controls-panel" aria-label="Model controls">
+          
+          <h2 class="eyebrow">Tune the model!</h2>
+          <!-- <p class="controls-hint">A line is described by <strong>y = mx + b</strong>.</p> -->
+          <br>
+          <br>
+          <div class="error-visual-toggles" role="group" aria-label="Error visualisations">
+            <label><input type="checkbox" data-show-residuals> Show residual distance</label>
+            <label><input type="checkbox" data-show-squared-residuals> Show squared residual</label>
+          </div>
+          <!--Error-->
+          <span class="range-label">
+              Residual Error (\( R^2 \)): <span class="symbol" id="error-2"></span>
+          </span>
+          <span class="range-label">
+              Loss (Mean Error Squared): <span class="symbol" id="loss-2"></span>
+          </span>
+
+          <label class="range-control" for="slope-2">
+            <span class="range-label">
+              Slope <span class="symbol">\( \beta_1\)</span>
+              <output id="slope-value-2" for="slope-2">0.8</output>
+            </span>
+            <input id="slope-2" type="range" min="-2" max="2" step="0.1" value="0.8">
+            <span class="range-ends"><span>−2</span><span>0</span><span>2</span></span>
+            <span class="control-explanation">How steep the line is, and which way it tilts.</span>
+          </label>
+
+          <label class="range-control" for="intercept-2">
+            <span class="range-label">
+              Y-intercept <span class="symbol">\( \beta_0\)</span>
+              <output id="intercept-value-2" for="intercept-2">1.0</output>
+            </span>
+            <input id="intercept-2" type="range" min="-5" max="5" step="0.1" value="1">
+            <span class="range-ends"><span>−5</span><span>0</span><span>5</span></span>
+            <span class="control-explanation">Where the line crosses the vertical axis.</span>
+          </label>
+
+          <button class="reset-button" id="reset-2" type="button">Reset line</button>
+        </aside>
+      </section>
+
       <!-- <section class="learning-note">
         <span class="note-mark" aria-hidden="true">i</span>
         <p>
@@ -115,6 +174,10 @@
     </main>
   </body>
 </html>
+
+
+
+
 
 
 
