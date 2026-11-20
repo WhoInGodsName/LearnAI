@@ -222,6 +222,7 @@ input[type="range"]:active {
 
 .learning-note p {
   margin: 0;
+  font-size: inherit;
 }
 
 .learning-note strong {
@@ -339,6 +340,7 @@ input[type="range"]:active {
   outline: 3px solid rgb(66 133 244 / 45%);
   outline-offset: 3px;
 }
+
 
 
 
