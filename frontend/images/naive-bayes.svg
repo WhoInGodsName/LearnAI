@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Emails sorted into a normal inbox and a spam folder">
+  <rect width="640" height="360" fill="#FAF3F0"/>
+
+  <!-- Incoming email -->
+  <g transform="translate(268 20)">
+    <rect width="104" height="88" rx="16" fill="#FFFFFF" stroke="#5C2018" stroke-width="5"/>
+    <path d="m8 13 44 37 44-37M8 78l30-29m28 0 30 29" fill="none" stroke="#1F5FC9" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Classifier routes the email to one of two folders -->
+  <g fill="none" stroke="#5C2018" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M320 108v32M320 140H170v34M320 140h150v34"/>
+    <path d="m160 165 10 12 10-12M460 165l10 12 10-12"/>
+  </g>
+  <circle cx="320" cy="140" r="9" fill="#BC4639"/>
+
+  <!-- Normal inbox -->
+  <g>
+    <rect x="65" y="190" width="210" height="140" rx="18" fill="#FFFFFF" stroke="#1F5FC9" stroke-width="5"/>
+    <path d="M65 208q0-18 18-18h174q18 0 18 18v27H65z" fill="#4285F4"/>
+    <text x="170" y="221" fill="#FFFFFF" font-family="system-ui,sans-serif" font-size="19" font-weight="800" text-anchor="middle" letter-spacing="1.5">NORMAL</text>
+    <rect x="110" y="252" width="120" height="62" rx="9" fill="#FAF3F0" stroke="#E7C7C1" stroke-width="3"/>
+    <path d="m116 260 54 38 54-38M116 307l34-31m40 0 34 31" fill="none" stroke="#1F5FC9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Spam folder -->
+  <g>
+    <rect x="365" y="190" width="210" height="140" rx="18" fill="#FFFFFF" stroke="#BC4639" stroke-width="5"/>
+    <path d="M365 208q0-18 18-18h174q18 0 18 18v27H365z" fill="#BC4639"/>
+    <text x="470" y="221" fill="#FFFFFF" font-family="system-ui,sans-serif" font-size="19" font-weight="800" text-anchor="middle" letter-spacing="2">SPAM</text>
+    <rect x="410" y="252" width="120" height="62" rx="9" fill="#FAF3F0" stroke="#E7C7C1" stroke-width="3"/>
+    <path d="m416 260 54 38 54-38M416 307l34-31m40 0 34 31" fill="none" stroke="#BC4639" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
+
