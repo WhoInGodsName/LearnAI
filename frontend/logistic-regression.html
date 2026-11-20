@@ -11,11 +11,15 @@
     <script src="ML/LogisticRegression.js" defer></script>
      <!-- Load MathJax -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="nav.js" defer></script>
   </head>
   <body class="logistic-page">
     <header class="site-header">
       <a class="site-logo" href="index.html" aria-label="LearnAI.com.au home">Trials<span>andErrors</span>.academy</a>
-      <nav aria-label="Main navigation">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation menu">
+        <svg class="nav-icon nav-icon-menu" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg><svg class="nav-icon nav-icon-close" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      </button>
+      <nav id="site-nav" aria-label="Main navigation">
         <a href="index.html#home">Home</a>
         <a href="explore.html">Explore</a>
         <a href="index.html#about">About</a>
@@ -103,6 +107,8 @@
     </main>
   </body>
 </html>
+
+
 
 
 
