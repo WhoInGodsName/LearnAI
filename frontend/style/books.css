@@ -199,3 +199,30 @@
     transition: none;
   }
 }
+
+.book-amazon-link {
+  display: inline-flex;
+  min-height: 2.8rem;
+  align-items: center;
+  gap: .75rem;
+  margin-top: 1.35rem;
+  padding: .7rem 1rem;
+  color: #fff;
+  background: var(--color-accent);
+  border-radius: .55rem;
+  font-size: .9rem;
+  font-weight: 750;
+  text-decoration: none;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.book-amazon-link:hover {
+  color: #fff;
+  background: #174B9D;
+  transform: translateY(-1px);
+}
+
+.book-amazon-link:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
