@@ -1,7 +1,7 @@
 .books-main {
   width: min(calc(100% - 3rem), var(--content-width));
   margin-inline: auto;
-  padding: clamp(2.5rem, 7vw, 5rem) 0 6rem;
+  padding: 1rem 0 6rem;
 }
 
 .books-intro {
