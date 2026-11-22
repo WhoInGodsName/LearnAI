@@ -61,7 +61,7 @@
       let sse = 0;
       for (const [x, y] of points) {
         const predicted = slope * x + intercept;
-        sse += (x - predicted) ** 2;
+        sse += (y - predicted) ** 2;
 
         // Draw the vertical residual gap when its checkbox is enabled.
         const residual = y - predicted;
@@ -107,6 +107,8 @@
     draw();
   });
 })();
+
+
 
 
 

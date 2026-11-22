@@ -30,8 +30,7 @@
       <a class="back-link" href="explore.html">← Back to explore</a>
       <section class="lesson-intro">
         <h1>What is <span>Logistic Regression?</span></h1>
-        <p>Logistic regression estimates the probability that an example belongs to a class. It transforms a linear score into a value between
-             0 and 1 using the sigmoid function: \(p = \frac{1}{1 + e^{\sigma}}\) where \( \sigma = -(mx+b)\).</p>
+        <p>Logistic regression estimates the probability that an example belongs to class 1. First, it calculates a linear score, \(z = mx + b\). Then it transforms that score into a probability between 0 and 1 with the sigmoid function: \( \hat{p} = \sigma(z) = \frac{1}{1 + e^{-z}} \).</p>
         <h1>Shape the curve.</h1>
         <p>Adjust the slope and intercept. Watch how the sigmoid curve changes the predicted probability. </p>
       </section>
@@ -67,7 +66,7 @@
 
           <!--Error-->
           <span class="range-label">
-              Classification error: <span class="symbol" id="Error"></span>
+              Classification error (at 0.5): <span class="symbol" id="Error"></span>
           </span>
           <span class="range-label">
               Binary cross-entropy loss: <span class="symbol" id="Loss"></span>
@@ -80,7 +79,7 @@
             </span>
             <input id="slope" type="range" min="-25" max="25" step="0.1" value="0.8">
             <span class="range-ends"><span>−25</span><span>0</span><span>25</span></span>
-            <span class="control-explanation">Controls how steep the probability curve is.</span>
+            <span class="control-explanation">Controls how steep the curve is and whether probability rises or falls as x increases.</span>
           </label>
 
           <label class="range-control" for="intercept">
@@ -90,13 +89,26 @@
             </span>
             <input id="intercept" type="range" min="-25" max="25" step="0.1" value="-4">
             <span class="range-ends"><span>−25</span><span>0</span><span>25</span></span>
-            <span class="control-explanation">Moves the curve midpoint left or right.</span>
+            <span class="control-explanation">For a nonzero slope, moves the 0.5 crossing at x = -b/m. If the slope is zero, it sets a flat probability.</span>
           </label>
 
           <button class="reset-button" id="reset" type="button">Reset curve</button>
         </aside>
       </section>
 
+      <section class="loss-explanation">
+        <h2>How do we know if our predictions are any good?</h2>
+        <p>The curve gives us a probability, but our data points have actual labels: 0 or 1. We need a way to compare the two. Let’s take a look at classification error and loss!</p>
+
+        <h3>Classification Error</h3>
+        <p>For this demo, a probability of 0.5 or higher is counted as class 1. Anything below 0.5 is class 0. Classification error is the fraction of examples the model puts in the wrong class, shown as a percentage above.</p>
+        <p>This is easy to understand, but it only says whether a prediction was right or wrong. It doesn’t tell us how confident the model was. A prediction of 0.51 and a prediction of 0.99 are both counted as class 1.</p>
+
+        <h3>Binary Cross-Entropy Loss</h3>
+        <p>Binary cross-entropy looks at the probability itself, not just the final class. For all \(n\) examples, we calculate: \(\text{BCE} = -\frac{1}{n}\sum_{i=1}^{n}\left[y_i\log(\hat{p}_i) + (1-y_i)\log(1-\hat{p}_i)\right]\).</p>
+        <p>Here, \(y_i\) is the actual class (0 or 1), and \(\hat{p}_i\) is the probability our model gives to class 1. If the true class is 1, a low predicted probability gets a large penalty. If the true class is 0, a high probability gets a large penalty. The more confidently wrong the model is, the larger the loss. Ouch! The script keeps probabilities just above 0 and just below 1 before taking the logarithm, so it never tries to calculate log(0).</p>
+        <p>The loss shown above is the average across all the examples. A smaller loss means the probabilities fit these labels better. Unlike classification error, the loss changes as the probabilities change, which makes it useful when training a model to improve its predictions.</p>
+      </section>
       <!-- <section class="learning-note">
         <span class="note-mark" aria-hidden="true">i</span>
         <p>
@@ -107,6 +119,9 @@
     </main>
   </body>
 </html>
+
+
+
 
 
 
