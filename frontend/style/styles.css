@@ -658,3 +658,58 @@ nav a[aria-current="page"] { box-shadow: 0 2px 0 var(--color-accent); }
 
 
 
+
+/* Apply the glitch treatment only to “Errors” in the wordmark. */
+.site-header .site-logo .logo-glitch {
+  position: relative;
+  display: inline-block;
+  color: var(--color-primary);
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  letter-spacing: -.055em;
+  text-shadow: 1.5px 0 #4285F4, -1.5px 0 #BC4639;
+}
+
+.site-header .site-logo .logo-glitch::before,
+.site-header .site-logo .logo-glitch::after {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  color: #4285F4;
+  content: attr(data-text);
+  pointer-events: none;
+}
+
+.site-header .site-logo .logo-glitch::before {
+  clip-path: inset(12% 0 70% 0);
+  transform: translateX(-1px);
+}
+
+.site-header .site-logo .logo-glitch::after {
+  color: #BC4639;
+  clip-path: inset(68% 0 12% 0);
+  transform: translateX(1px);
+}
+
+.site-header .site-logo:hover .logo-glitch::before {
+  animation: wordmark-glitch 360ms steps(2, end) 1;
+}
+
+.site-header .site-logo:hover .logo-glitch::after {
+  animation: wordmark-glitch 300ms steps(2, end) 1 reverse;
+}
+
+@keyframes wordmark-glitch {
+  0% { transform: translate(0); clip-path: inset(8% 0 80% 0); }
+  35% { transform: translate(-2px, 1px); clip-path: inset(38% 0 38% 0); }
+  70% { transform: translate(2px, -1px); clip-path: inset(72% 0 8% 0); }
+  100% { transform: translate(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header .site-logo:hover .logo-glitch::before,
+  .site-header .site-logo:hover .logo-glitch::after {
+    animation: none;
+  }
+}
