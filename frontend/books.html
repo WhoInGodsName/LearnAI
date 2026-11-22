@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#F3E0DC">
+    <meta name="description" content="Books I have read and the ideas I have taken from them.">
+    <title>Books I’ve read — TrialsAndErrors.Academy</title>
+    <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="style/books.css">
+    <script src="nav.js" defer></script>
+    <script src="books.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="site-logo" href="index.html" aria-label="Trials and Errors Academy home">Trials<span>andErrors</span>.academy</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation menu">
+        <svg class="nav-icon nav-icon-menu" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg class="nav-icon nav-icon-close" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      </button>
+      <nav id="site-nav" aria-label="Main navigation">
+        <a href="index.html#home">Home</a>
+        <a href="explore.html">Explore</a>
+        <a href="books.html" aria-current="page">Books</a>
+        <a href="index.html#about">About</a>
+      </nav>
+    </header>
+
+    <main class="books-main">
+      <section class="books-intro" aria-labelledby="books-title">
+        <p class="eyebrow">My reading shelf</p>
+        <h1 id="books-title">Books I’ve <span>read.</span></h1>
+        <p>A collection of the books I’ve read, what I’ve learned from them, and the ideas I want to come back to.</p>
+      </section>
+
+      <section class="book-grid" aria-label="Books I have read">
+        <button class="book-card" type="button" data-title="Neuroscience and Critical Thinking" data-author="Albert Rutherford" data-cover="images/books/neuroscience-critical-thinking.png">
+          <img class="book-cover" src="images/books/neuroscience-critical-thinking.png" alt="Cover of Neuroscience and Critical Thinking" loading="lazy">
+          <span class="book-content"><span class="book-title">Neuroscience and Critical Thinking</span><span class="book-author">Albert Rutherford</span><span class="book-open">View book <span aria-hidden="true">↗</span></span></span>
+        </button>
+
+        <button class="book-card" type="button" data-title="A Brief History of Intelligence" data-author="Max Solomon Bennett" data-cover="images/books/brief-history-intelligence.png">
+          <img class="book-cover" src="images/books/brief-history-intelligence.png" alt="Cover of A Brief History of Intelligence" loading="lazy">
+          <span class="book-content"><span class="book-title">A Brief History of Intelligence</span><span class="book-author">Max Solomon Bennett</span><span class="book-open">View book <span aria-hidden="true">↗</span></span></span>
+        </button>
+
+        <button class="book-card" type="button" data-title="Hands-On Large Language Models: Language Understanding and Generation" data-author="Jay Alammar and Maarten Grootendorst" data-cover="images/books/hands-on-large-language-models.png">
+          <img class="book-cover" src="images/books/hands-on-large-language-models.png" alt="Cover of Hands-On Large Language Models" loading="lazy">
+          <span class="book-content"><span class="book-title">Hands-On Large Language Models</span><span class="book-author">Jay Alammar and Maarten Grootendorst</span><span class="book-open">View book <span aria-hidden="true">↗</span></span></span>
+        </button>
+
+        <button class="book-card" type="button" data-title="The Alignment Problem: Machine Learning and Human Values" data-author="Brian Christian" data-cover="images/books/alignment-problem.png">
+          <img class="book-cover" src="images/books/alignment-problem.png" alt="Cover of The Alignment Problem" loading="lazy">
+          <span class="book-content"><span class="book-title">The Alignment Problem</span><span class="book-author">Brian Christian</span><span class="book-open">View book <span aria-hidden="true">↗</span></span></span>
+        </button>
+
+        <button class="book-card" type="button" data-title="The Emergent Mind: How Intelligence Arises in People and Machines" data-author="Gaurav Suri and Jay McClelland" data-cover="https://www.hachettebookgroup.com/wp-content/uploads/2025/03/9781541605268.jpg">
+          <img class="book-cover" src="https://www.hachettebookgroup.com/wp-content/uploads/2025/03/9781541605268.jpg" alt="Cover of The Emergent Mind" loading="lazy">
+          <span class="book-content"><span class="book-title">The Emergent Mind</span><span class="book-author">Gaurav Suri and Jay McClelland</span><span class="book-open">View book <span aria-hidden="true">↗</span></span></span>
+        </button>
+
+        <button class="book-card" type="button" data-title="The AI Con: How to Fight Big Tech’s Hype and Create the Future We Want" data-author="Emily M. Bender and Alex Hanna" data-cover="images/books/ai-con.png">
+          <img class="book-cover" src="images/books/ai-con.png" alt="Cover of The AI Con" loading="lazy">
+          <span class="book-content"><span class="book-title">The AI Con</span><span class="book-author">Emily M. Bender and Alex Hanna</span><span class="book-open">View book <span aria-hidden="true">↗</span></span></span>
+        </button>
+
+        <button class="book-card" type="button" data-title="Why Machines Learn: The Elegant Maths Behind Modern AI" data-author="Anil Ananthaswamy" data-cover="images/books/why-machines-learn.png">
+          <img class="book-cover" src="images/books/why-machines-learn.png" alt="Cover of Why Machines Learn" loading="lazy">
+          <span class="book-content"><span class="book-title">Why Machines Learn</span><span class="book-author">Anil Ananthaswamy</span><span class="book-open">View book <span aria-hidden="true">↗</span></span></span>
+        </button>
+
+        <button class="book-card" type="button" data-title="A Slow Death: 83 Days of Radiation Sickness" data-author="NHK TV Crew" data-cover="images/books/slow-death.png">
+          <img class="book-cover" src="images/books/slow-death.png" alt="Cover of A Slow Death: 83 Days of Radiation Sickness" loading="lazy">
+          <span class="book-content"><span class="book-title">A Slow Death: 83 Days of Radiation Sickness</span><span class="book-author">NHK TV Crew</span><span class="book-open">View book <span aria-hidden="true">↗</span></span></span>
+        </button>
+
+        <button class="book-card" type="button" data-title="If Anyone Builds It, Everyone Dies: Why Superhuman AI Would Kill Us All" data-author="Eliezer Yudkowsky and Nate Soares" data-cover="images/books/if-anyone-builds-it.png">
+          <img class="book-cover" src="images/books/if-anyone-builds-it.png" alt="Cover of If Anyone Builds It, Everyone Dies" loading="lazy">
+          <span class="book-content"><span class="book-title">If Anyone Builds It, Everyone Dies</span><span class="book-author">Eliezer Yudkowsky and Nate Soares</span><span class="book-open">View book <span aria-hidden="true">↗</span></span></span>
+        </button>
+      </section>
+    </main>
+
+    <dialog class="book-dialog" id="book-dialog" aria-labelledby="dialog-title">
+      <button class="book-dialog-close" type="button" aria-label="Close book details">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      </button>
+      <img class="book-dialog-cover" id="dialog-cover" src="" alt="">
+      <div class="book-dialog-copy">
+        <p class="eyebrow">From my reading shelf</p>
+        <h2 id="dialog-title"></h2>
+        <p id="dialog-author" class="book-author"></p>
+      </div>
+    </dialog>
+  </body>
+</html>

@@ -1,0 +1,201 @@
+.books-main {
+  width: min(calc(100% - 3rem), var(--content-width));
+  margin-inline: auto;
+  padding: clamp(2.5rem, 7vw, 5rem) 0 6rem;
+}
+
+.books-intro {
+  max-width: 48rem;
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+.books-intro h1 {
+  margin: 0 0 .85rem;
+  color: var(--color-primary);
+  font-size: clamp(3rem, 7vw, 5.25rem);
+  letter-spacing: -.065em;
+}
+
+.books-intro h1 span {
+  color: var(--color-highlight);
+}
+
+.books-intro > p:last-child {
+  max-width: 42rem;
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  align-items: stretch;
+  gap: 1.25rem;
+}
+
+.book-card {
+  display: flex;
+  min-width: 0;
+  overflow: hidden;
+  flex-direction: column;
+  padding: 0;
+  color: var(--color-text);
+  text-align: left;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary-soft);
+  box-shadow: 0 1rem 2rem rgb(59 59 59 / 12%);
+}
+
+.book-card:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.book-cover {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  padding: .7rem;
+  object-fit: contain;
+  background: var(--color-surface-muted);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.book-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem 1.1rem 1.15rem;
+}
+
+.book-title {
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  font-weight: 750;
+  line-height: 1.35;
+}
+
+.book-author {
+  margin: .45rem 0 1rem;
+  color: var(--color-text-muted);
+  font-size: .9rem;
+  line-height: 1.45;
+}
+
+.book-open {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: .75rem;
+  color: var(--color-accent);
+  border-top: 1px solid var(--color-border);
+  font-size: .85rem;
+  font-weight: 750;
+}
+
+.book-dialog {
+  position: relative;
+  width: min(48rem, calc(100% - 2rem));
+  max-width: none;
+  max-height: min(90vh, 48rem);
+  padding: clamp(1.25rem, 4vw, 2.25rem);
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 1.5rem 5rem rgb(55 33 31 / 30%);
+}
+
+.book-dialog[open] {
+  display: grid;
+  grid-template-columns: minmax(10rem, .75fr) minmax(0, 1.25fr);
+  align-items: center;
+  gap: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+.book-dialog::backdrop {
+  background: rgb(31 20 17 / 68%);
+  backdrop-filter: blur(3px);
+}
+
+.book-dialog-cover {
+  display: block;
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  background: var(--color-surface-muted);
+  border-radius: .45rem;
+}
+
+.book-dialog-copy .eyebrow {
+  margin-bottom: .65rem;
+}
+
+.book-dialog-copy h2 {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: clamp(1.5rem, 4vw, 2.3rem);
+  line-height: 1.2;
+}
+
+.book-dialog-copy .book-author {
+  margin: .75rem 0 0;
+  font-size: 1rem;
+}
+
+.book-dialog-close {
+  position: absolute;
+  top: .7rem;
+  right: .7rem;
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  color: var(--color-primary);
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.book-dialog-close svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+@media (max-width: 600px) {
+  .books-main {
+    width: min(calc(100% - 2rem), var(--content-width));
+  }
+
+  .book-dialog[open] {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .book-dialog-cover {
+    width: min(60%, 13rem);
+    max-height: 48vh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .book-card {
+    transition: none;
+  }
+}

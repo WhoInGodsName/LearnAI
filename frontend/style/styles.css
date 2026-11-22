@@ -483,8 +483,8 @@ nav a[aria-current="page"] { box-shadow: 0 2px 0 var(--color-accent); }
 /* Keep the navbar at the same width and link positions on every page. */
 .site-header nav {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  width: 16rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 20rem;
   gap: .25rem;
 }
 
@@ -646,6 +646,7 @@ nav a[aria-current="page"] { box-shadow: 0 2px 0 var(--color-accent); }
     box-shadow: none;
   }
 }
+
 
 
 
