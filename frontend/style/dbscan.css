@@ -1,0 +1,93 @@
+.dbscan-main .lesson-intro {
+  max-width: 52rem;
+}
+
+.dbscan-main .lesson-intro h1 {
+  max-width: 48rem;
+}
+
+.dbscan-main .lesson-intro p {
+  max-width: 46rem;
+  font-size: 1.1rem;
+  line-height: 1.65;
+}
+
+.dbscan-chart-wrap {
+  width: min(100%, 34rem);
+  height: auto;
+  aspect-ratio: 1;
+  margin: 1rem auto .85rem;
+}
+
+.dbscan-legend {
+  justify-content: center;
+  gap: .7rem 1rem;
+}
+
+.dbscan-legend-dot {
+  width: .7rem;
+  height: .7rem;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.dbscan-raw { color: #8B817D; background: #D9D2CF; }
+.dbscan-cluster-one { color: #1F5FC9; background: #4285F4; }
+.dbscan-cluster-two { color: #8E372D; background: #BC4639; }
+.dbscan-noise { color: #5C2018; background: #EFB985; }
+
+.dbscan-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.dbscan-controls > .eyebrow {
+  margin: 0;
+}
+
+.dbscan-controls .range-control {
+  margin: 1.3rem 0 1rem;
+}
+
+.dbscan-parameters {
+  margin: .3rem 0 1rem;
+  padding: .8rem 1rem;
+  background: rgb(255 255 255 / 56%);
+  border: 1px solid var(--color-border);
+  border-radius: .65rem;
+}
+
+.dbscan-parameters p {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: .35rem 0;
+  color: var(--color-text-muted);
+  font-size: .86rem;
+}
+
+.dbscan-parameters strong {
+  color: var(--color-primary);
+}
+
+.dbscan-parameters span {
+  color: var(--color-accent);
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-weight: 700;
+}
+
+.dbscan-controls .reset-button {
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+
+.dbscan-main .learning-note {
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 760px) {
+  .dbscan-chart-wrap {
+    width: min(100%, 30rem);
+  }
+}

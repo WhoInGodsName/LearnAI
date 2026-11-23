@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#F3E0DC">
+    <meta name="description" content="Explore how DBSCAN discovers two nested clusters by growing from dense regions of points.">
+    <title>DBSCAN — TrialsAndErrors.Academy</title>
+    <link rel="stylesheet" href="style/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/linearRegression.css">
+    <link rel="stylesheet" href="style/dbscan.css">
+    <script src="ML/DBSCAN.js" defer></script>
+    <script src="nav.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="site-logo" href="index.html" aria-label="Trials and Errors Academy home">Trials<span>and</span><span class="logo-glitch" data-text="Errors">Errors</span>.academy</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation menu">
+        <svg class="nav-icon nav-icon-menu" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg><svg class="nav-icon nav-icon-close" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      </button>
+      <nav id="site-nav" aria-label="Main navigation">
+        <a href="index.html#home">Home</a>
+        <a href="explore.html" aria-current="page">Explore</a>
+        <a href="books.html">Books</a>
+        <a href="index.html#about">About</a>
+      </nav>
+    </header>
+
+    <main class="regression-main dbscan-main">
+      <a class="back-link" href="explore.html">← Back to explore</a>
+      <section class="lesson-intro">
+        <h1>Build clusters with <span>DBSCAN.</span></h1>
+        <p>DBSCAN groups points by density. Move the slider from left to right to watch it check neighbours, find core points, grow two nested clusters, and leave isolated points as noise.</p>
+      </section>
+
+      <section class="playground dbscan-playground" aria-label="DBSCAN cluster-building visualization">
+        <div class="graph-panel">
+          <div class="graph-heading">
+            <div>
+              <p class="eyebrow">DBSCAN visualisation</p>
+              <h2>From points to clusters</h2>
+            </div>
+            <output id="dbscan-stage" class="equation" aria-live="polite">Raw points</output>
+          </div>
+          <div class="chart-wrap dbscan-chart-wrap">
+            <canvas id="dbscan-chart" role="img" aria-label="A scatter plot of points arranged in two nested rings. Use the progress slider to see DBSCAN discover the clusters."></canvas>
+          </div>
+          <div class="legend dbscan-legend" aria-label="Chart legend">
+            <span><i class="dbscan-legend-dot dbscan-raw"></i>Unvisited point</span>
+            <span><i class="dbscan-legend-dot dbscan-cluster-one"></i>Inner cluster</span>
+            <span><i class="dbscan-legend-dot dbscan-cluster-two"></i>Outer cluster</span>
+            <span><i class="dbscan-legend-dot dbscan-noise"></i>Noise</span>
+          </div>
+        </div>
+
+        <aside class="controls-panel dbscan-controls" aria-label="DBSCAN visualization controls">
+          <h2 class="eyebrow">Follow the process</h2>
+          <p id="dbscan-description" class="controls-hint" aria-live="polite">Start with the unlabelled data. DBSCAN has not visited any points yet.</p>
+          <label class="range-control" for="dbscan-progress">
+            <span class="range-label">Algorithm progress <output id="dbscan-progress-value" for="dbscan-progress">0 points</output></span>
+            <input id="dbscan-progress" type="range" min="0" max="100" step="1" value="0">
+            <span class="range-ends"><span>Start</span><span>Two clusters</span></span>
+            <span class="control-explanation">Each step processes one point. Watch it join a cluster, or be left as noise.</span>
+          </label>
+
+          <div class="dbscan-parameters" aria-label="Fixed DBSCAN parameters">
+            <p><strong>ε neighbourhood</strong><span>0.46 units</span></p>
+            <p><strong>Minimum points</strong><span>4</span></p>
+          </div>
+          <p class="control-explanation">For this example, ε and the minimum point count stay fixed. DBSCAN uses them to decide which points are dense enough to grow a cluster.</p>
+          <button class="reset-button" id="dbscan-reset" type="button">Start again</button>
+        </aside>
+      </section>
+
+      <p class="learning-note"><span class="note-mark" aria-hidden="true">i</span><span><strong>Why two nested shapes?</strong> DBSCAN follows local density, so it can find a ring inside another ring without splitting the data with a straight line. The space between the rings keeps them as separate clusters.</span></p>
+    </main>
+  </body>
+</html>
