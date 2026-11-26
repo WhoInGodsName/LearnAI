@@ -139,7 +139,8 @@
 
 
 
-.neural-network-section {
+.neural-network-section,
+.computer-vision-section {
   margin-top: clamp(3.5rem, 8vw, 6rem);
 }
 

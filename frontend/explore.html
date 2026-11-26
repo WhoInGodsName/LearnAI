@@ -110,11 +110,42 @@
 
       </section>
 
-      <section class="neural-network-section" aria-labelledby="neural-network-title">
+      <section class="computer-vision-section" aria-labelledby="computer-vision-title">
         <div class="neural-network-intro">
           <p class="eyebrow">Do you see what I see?</p>
-          <h1 id="neural-network-title">Σxplore <span>Computer Vision</span></h1>
-          <p>Lets have a look at how computers see!</p>
+          <h1 id="computer-vision-title">Σxplore <span>Computer Vision</span></h1>
+          <p>Explore how filters and classical vision algorithms reveal edges, shapes, and useful patterns in images.</p>
+        </div>
+        <div class="algorithm-grid computer-vision-grid" aria-label="Computer Vision algorithms">
+          <article class="algorithm-card is-coming-soon" aria-label="Gaussian Blur, coming soon">
+            <svg class="algorithm-image" viewBox="0 0 640 360" role="img" aria-label="A sharp shape becoming blurred"><rect width="640" height="360" fill="#FAF3F0"/><path d="M90 80h460v200H90z" fill="#D9D2CF"/><circle cx="240" cy="180" r="70" fill="#5C2018"/><circle cx="440" cy="180" r="70" fill="#BC4639" opacity=".52"/><circle cx="440" cy="180" r="55" fill="#BC4639" opacity=".28"/><circle cx="440" cy="180" r="38" fill="#BC4639" opacity=".18"/><path d="M320 180h42m-12-12 12 12-12 12" fill="none" stroke="#1F5FC9" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><text x="175" y="300" fill="#5C2018" font-family="Ubuntu, sans-serif" font-size="20">sharp</text><text x="400" y="300" fill="#5C2018" font-family="Ubuntu, sans-serif" font-size="20">blurred</text></svg>
+            <div class="card-content"><div class="card-meta"><span class="card-category">Image filtering</span><span class="status">Coming soon</span></div><h2 class="card-title">Gaussian Blur</h2><p class="card-description">Smooth an image with a weighted kernel to reduce fine detail and prepare it for later steps.</p></div>
+          </article>
+
+          <article class="algorithm-card is-coming-soon" aria-label="Sobel Edge Detection, coming soon">
+            <svg class="algorithm-image" viewBox="0 0 640 360" role="img" aria-label="A 3 by 3 Sobel kernel detecting a bright edge"><rect width="640" height="360" fill="#FAF3F0"/><path d="M80 70h220v220H80z" fill="#D9D2CF"/><path d="M190 70h110v220H190z" fill="#64504C"/><path d="M360 70h200v220H360z" fill="#FFFFFF" stroke="#E7C7C1" stroke-width="3"/><g stroke="#E7C7C1" stroke-width="2"><path d="M426 70v220M493 70v220M360 143h200M360 216h200"/></g><g fill="#1F5FC9" font-family="Ubuntu, sans-serif" font-size="27" font-weight="700" text-anchor="middle"><text x="393" y="120">−1</text><text x="460" y="120">0</text><text x="527" y="120">1</text><text x="393" y="194">−2</text><text x="460" y="194">0</text><text x="527" y="194">2</text><text x="393" y="267">−1</text><text x="460" y="267">0</text><text x="527" y="267">1</text></g></svg>
+            <div class="card-content"><div class="card-meta"><span class="card-category">Edge detection · kernels</span><span class="status">Coming soon</span></div><h2 class="card-title">Sobel Filter</h2><p class="card-description">Use horizontal and vertical 3 × 3 kernels to estimate image gradients and highlight edges.</p></div>
+          </article>
+
+          <article class="algorithm-card is-coming-soon" aria-label="Canny Edge Detection, coming soon">
+            <svg class="algorithm-image" viewBox="0 0 640 360" role="img" aria-label="Canny edge detection turns a blurred shape into a thin outline"><rect width="640" height="360" fill="#FAF3F0"/><rect x="52" y="54" width="240" height="250" rx="8" fill="#D9D2CF"/><circle cx="172" cy="178" r="70" fill="#5C2018" opacity=".45"/><path d="M330 178h65m-15-15 15 15-15 15" fill="none" stroke="#1F5FC9" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><rect x="430" y="54" width="158" height="250" rx="8" fill="#222"/><circle cx="509" cy="178" r="70" fill="none" stroke="#FFFFFF" stroke-width="5"/><text x="90" y="330" fill="#5C2018" font-family="Ubuntu, sans-serif" font-size="18">blur + gradients</text><text x="467" y="330" fill="#5C2018" font-family="Ubuntu, sans-serif" font-size="18">thin edges</text></svg>
+            <div class="card-content"><div class="card-meta"><span class="card-category">Edge detection</span><span class="status">Coming soon</span></div><h2 class="card-title">Canny Edge Detector</h2><p class="card-description">Follow the stages that turn gradients into thin, connected edges while suppressing weaker responses.</p></div>
+          </article>
+
+          <article class="algorithm-card is-coming-soon" aria-label="Laplacian Edge Detection, coming soon">
+            <svg class="algorithm-image" viewBox="0 0 640 360" role="img" aria-label="A Laplacian 3 by 3 kernel and the edges it highlights"><rect width="640" height="360" fill="#FAF3F0"/><rect x="70" y="70" width="220" height="220" fill="#FFFFFF" stroke="#E7C7C1" stroke-width="3"/><g stroke="#E7C7C1" stroke-width="2"><path d="M143 70v220M216 70v220M70 143h220M70 216h220"/></g><g fill="#BC4639" font-family="Ubuntu, sans-serif" font-size="29" font-weight="700" text-anchor="middle"><text x="107" y="120">0</text><text x="180" y="120">1</text><text x="253" y="120">0</text><text x="107" y="193">1</text><text x="180" y="193">−4</text><text x="253" y="193">1</text><text x="107" y="266">0</text><text x="180" y="266">1</text><text x="253" y="266">0</text></g><path d="M360 82h195v196H360z" fill="#282828"/><path d="M405 105h92v150h-92z" fill="none" stroke="#FFFFFF" stroke-width="5"/><path d="M535 100v160" stroke="#BC4639" stroke-width="5" stroke-dasharray="8 8"/></svg>
+            <div class="card-content"><div class="card-meta"><span class="card-category">Edge detection · kernels</span><span class="status">Coming soon</span></div><h2 class="card-title">Laplacian Filter</h2><p class="card-description">Use a second-derivative kernel to respond strongly where image intensity changes quickly.</p></div>
+          </article>
+
+          <article class="algorithm-card is-coming-soon" aria-label="Thresholding, coming soon">
+            <svg class="algorithm-image" viewBox="0 0 640 360" role="img" aria-label="A grayscale image converted into a black and white mask"><rect width="640" height="360" fill="#FAF3F0"/><rect x="52" y="62" width="232" height="236" rx="8" fill="#666"/><circle cx="170" cy="180" r="78" fill="#E7E7E7"/><circle cx="170" cy="180" r="40" fill="#444"/><path d="M308 180h52m-14-14 14 14-14 14" fill="none" stroke="#1F5FC9" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><rect x="386" y="62" width="202" height="236" rx="8" fill="#171717"/><circle cx="486" cy="180" r="78" fill="#FFFFFF"/><circle cx="486" cy="180" r="40" fill="#171717"/><text x="92" y="330" fill="#5C2018" font-family="Ubuntu, sans-serif" font-size="18">grayscale</text><text x="435" y="330" fill="#5C2018" font-family="Ubuntu, sans-serif" font-size="18">binary mask</text></svg>
+            <div class="card-content"><div class="card-meta"><span class="card-category">Segmentation</span><span class="status">Coming soon</span></div><h2 class="card-title">Image Thresholding</h2><p class="card-description">Choose an intensity cutoff to separate brighter pixels from darker ones and create a binary mask.</p></div>
+          </article>
+
+          <article class="algorithm-card is-coming-soon" aria-label="Hough Line Transform, coming soon">
+            <svg class="algorithm-image" viewBox="0 0 640 360" role="img" aria-label="Detected image edges mapped to intersecting lines in Hough space"><rect width="640" height="360" fill="#FAF3F0"/><rect x="42" y="54" width="245" height="252" rx="8" fill="#282828"/><path d="M85 260 188 100 247 260M117 210h95" fill="none" stroke="#FFFFFF" stroke-width="5"/><path d="M325 180h54m-14-14 14 14-14 14" fill="none" stroke="#1F5FC9" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><rect x="400" y="54" width="198" height="252" rx="8" fill="#FFFFFF" stroke="#E7C7C1" stroke-width="3"/><path d="M425 265 570 95M430 100 570 270M424 180h150" fill="none" stroke="#D4A59A" stroke-width="3"/><circle cx="500" cy="180" r="18" fill="#BC4639"/><circle cx="500" cy="180" r="40" fill="none" stroke="#BC4639" stroke-width="3" stroke-dasharray="6 6"/></svg>
+            <div class="card-content"><div class="card-meta"><span class="card-category">Feature detection</span><span class="status">Coming soon</span></div><h2 class="card-title">Hough Line Transform</h2><p class="card-description">Turn image edges into votes in parameter space to find strong lines, even when edges are broken.</p></div>
+          </article>
         </div>
       </section>
 
