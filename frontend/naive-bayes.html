@@ -111,7 +111,9 @@
         <p>The model uses <strong>Laplace smoothing</strong> by adding one to each word count. This gives a word that was not seen in a class a small probability, rather than letting it reduce that class's probability to zero.</p>
 
         <h3>Why is it called “naive”?</h3>
-        <p>Naive Bayes makes the simplifying assumption that each word contributes independently once we know whether the email is spam or normal. Real words do depend on each other, but this assumption keeps the model simple and can still work well for sorting messages.</p>
+        <p>Naive Bayes makes the simplifying assumption that each word contributes independently once we know whether the email is spam or normal. In the real world, its not so simple.  Words rely on each other to provide important context.
+          Even though the real world language contains more nuance, keeping algorithms simple where possible is always preferred; such as in this particular case.
+        </p>
 
         <p>This demo uses a tiny set of example word counts to make the calculation visible. A real spam filter would learn from many labelled emails and consider much more context.</p>
       </section>
