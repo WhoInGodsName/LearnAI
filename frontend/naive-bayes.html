@@ -4,19 +4,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#F3E0DC">
-    <meta name="description" content="Explore how slope and intercept shape logistic regression probabilities.">
-    <title>Logistic Regression — TrialsAndErrors.Academy</title>
+    <meta name="description" content="Explore how Naive Bayes classifies email as spam or normal using word probabilities.">
+    <title>Naive Bayes — TrialsAndErrors.Academy</title>
     <link rel="stylesheet" href="style/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/linearRegression.css">
-    <script src="ML/LogisticRegression.js" defer></script>
-     <!-- Load MathJax -->
+    <link rel="stylesheet" href="style/naiveBayes.css">
+    <script src="ML/NaiveBayes.js" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      <script src="nav.js" defer></script>
+    <script src="nav.js" defer></script>
   </head>
-  <body class="logistic-page">
+  <body>
     <header class="site-header">
       <a class="site-logo" href="index.html" aria-label="Trials and Errors Academy home">Trials<span>and</span><span class="logo-glitch" data-text="Errors">Errors</span>.academy</a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation menu">
@@ -24,38 +24,88 @@
       </button>
       <nav id="site-nav" aria-label="Main navigation">
         <a href="index.html#home">Home</a>
-        <a href="explore.html">Explore</a>
+        <a href="explore.html" aria-current="page">Explore</a>
         <a href="books.html">Books</a>
         <a href="index.html#about">About</a>
       </nav>
     </header>
 
-    <main id="playground" class="regression-main">
+    <main id="playground" class="regression-main naive-bayes-main">
       <a class="back-link" href="explore.html">← Back to explore</a>
       <section class="lesson-intro">
-        <h1>Safe Or <span>Spam?</span></h1>
-        <p>Lets use Naive Bayes Classification to see if mail is safe or spam!</p>
-        <h1>Find the probability</h1>
-        <p>Adjust the slope and intercept. Watch how the sigmoid curve changes the predicted probability. </p>
+        <p class="eyebrow">Interactive lesson · Classification</p>
+        <h1>Is this email <span>spam?</span></h1>
+        <p>Naive Bayes can sort emails into spam and normal messages by learning which words tend to appear in each class. Choose the words in an email and watch the model compare their probabilities.</p>
       </section>
 
-      <!-- <section class="learning-note">
-        <span class="note-mark" aria-hidden="true">i</span>
-        <p>
-          <strong>What to notice</strong><br>
-          Changing the slope rotates the line around its intercept. Changing the intercept shifts the whole line up or down.
-        </p>
-      </section> -->
+      <section class="playground naive-bayes-playground" aria-label="Naive Bayes email classification demo">
+        <div class="graph-panel">
+          <div class="graph-heading">
+            <div>
+              <p class="eyebrow">Naive Bayes classifier</p>
+              <h2>How likely is spam?</h2>
+            </div>
+            <output id="classification-result" class="equation" aria-live="polite">Not sure yet</output>
+          </div>
+          <div class="nb-email-preview" aria-live="polite">
+            <span class="nb-email-icon" aria-hidden="true">✉</span>
+            <div><p class="eyebrow">Example email</p><p id="email-preview">Choose words to see how they affect the classification.</p></div>
+          </div>
+          <div class="chart-wrap nb-chart-wrap">
+            <canvas id="naive-bayes-chart" role="img" aria-label="Bar chart comparing the probability that the selected email is spam or normal."></canvas>
+          </div>
+          <div class="legend nb-probabilities" aria-live="polite">
+            <span><i class="nb-dot nb-spam-dot"></i>Spam <output id="spam-probability">50%</output></span>
+            <span><i class="nb-dot nb-normal-dot"></i>Normal <output id="normal-probability">50%</output></span>
+          </div>
+        </div>
+
+        <aside class="controls-panel nb-controls" aria-label="Email word controls">
+          <h2 class="eyebrow">Choose words in the email</h2>
+          <p class="controls-hint">Select a sample or toggle individual words. Each word adds evidence for one class or the other.</p>
+          <div class="nb-presets" aria-label="Example emails">
+            <button class="nb-preset" type="button" data-preset="spam">Spam-like email</button>
+            <button class="nb-preset" type="button" data-preset="normal">Normal email</button>
+          </div>
+          <fieldset class="nb-word-options">
+            <legend>Words found in the message</legend>
+            <label><input type="checkbox" value="free"> <span>free</span></label>
+            <label><input type="checkbox" value="prize"> <span>prize</span></label>
+            <label><input type="checkbox" value="urgent"> <span>urgent</span></label>
+            <label><input type="checkbox" value="claim"> <span>claim</span></label>
+            <label><input type="checkbox" value="now"> <span>now</span></label>
+            <label><input type="checkbox" value="offer"> <span>offer</span></label>
+            <label><input type="checkbox" value="click"> <span>click</span></label>
+            <label><input type="checkbox" value="win"> <span>win</span></label>
+            <label><input type="checkbox" value="meeting"> <span>meeting</span></label>
+            <label><input type="checkbox" value="project"> <span>project</span></label>
+            <label><input type="checkbox" value="report"> <span>report</span></label>
+            <label><input type="checkbox" value="team"> <span>team</span></label>
+            <label><input type="checkbox" value="invoice"> <span>invoice</span></label>
+            <label><input type="checkbox" value="tomorrow"> <span>tomorrow</span></label>
+            <label><input type="checkbox" value="update"> <span>update</span></label>
+            <label><input type="checkbox" value="lunch"> <span>lunch</span></label>
+          </fieldset>
+          <button class="reset-button" id="clear-email" type="button">Clear words</button>
+        </aside>
+      </section>
+
+      <section class="loss-explanation nb-explanation" aria-labelledby="naive-bayes-explanation">
+        <h2 id="naive-bayes-explanation">Naive Bayes Classification</h2>
+        <p>Naive Bayes is a <strong>supervised</strong> Machine Learning model. It learns from emails that have already been labelled as spam or normal, then uses the words in a new email to estimate which class it belongs to.</p>
+
+        <h3>Learning from labelled emails</h3>
+        <p>The model looks at how often each word appears in spam emails and normal emails. It also learns the prior probability of each class: how common spam and normal emails are in the examples it was given. In this demo the two classes start equally likely, so the prior probability for each is 50%.</p>
+
+        <h3>Calculating the probability</h3>
+        <p>When a new email arrives, the model starts with each class's prior probability. Then it considers each selected word and asks how likely that word is in spam compared with normal email. These likelihoods are combined to estimate the probability of each class: \( P(C \mid w_1,\ldots,w_n) \propto P(C)\prod_{i=1}^{n}P(w_i\mid C) \). The probabilities for spam and normal are normalised so they add up to 100%.</p>
+        <p>The model uses <strong>Laplace smoothing</strong> by adding one to each word count. This gives a word that was not seen in a class a small probability, rather than letting it reduce that class's probability to zero.</p>
+
+        <h3>Why is it called “naive”?</h3>
+        <p>Naive Bayes makes the simplifying assumption that each word contributes independently once we know whether the email is spam or normal. Real words do depend on each other, but this assumption keeps the model simple and can still work well for sorting messages.</p>
+
+        <p>This demo uses a tiny set of example word counts to make the calculation visible. A real spam filter would learn from many labelled emails and consider much more context.</p>
+      </section>
     </main>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-

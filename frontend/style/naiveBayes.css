@@ -1,0 +1,195 @@
+.naive-bayes-main .lesson-intro {
+  max-width: 52rem;
+}
+
+.naive-bayes-main .lesson-intro p:last-child {
+  max-width: 48rem;
+  font-size: 1.1rem;
+  line-height: 1.65;
+}
+
+.nb-email-preview {
+  display: flex;
+  min-height: 5rem;
+  align-items: center;
+  gap: .9rem;
+  margin-top: 1.4rem;
+  padding: .85rem 1rem;
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+  border-radius: .7rem;
+}
+
+.nb-email-icon {
+  display: grid;
+  flex: 0 0 2.6rem;
+  height: 2.6rem;
+  place-items: center;
+  color: white;
+  background: var(--color-accent);
+  border-radius: .65rem;
+  font-size: 1.25rem;
+}
+
+.nb-email-preview .eyebrow {
+  margin: 0 0 .25rem;
+}
+
+.nb-email-preview p:last-child {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: .92rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.nb-chart-wrap {
+  height: clamp(260px, 34vw, 380px);
+  margin-top: 1.2rem;
+}
+
+.nb-probabilities {
+  justify-content: center;
+  gap: .8rem 1.5rem;
+}
+
+.nb-probabilities span {
+  font-weight: 700;
+}
+
+.nb-probabilities output {
+  color: var(--color-primary);
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-weight: 800;
+}
+
+.nb-dot {
+  width: .7rem;
+  height: .7rem;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.nb-spam-dot { color: #BC4639; background: #BC4639; }
+.nb-normal-dot { color: #1F5FC9; background: #4285F4; }
+
+.nb-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.nb-controls > .eyebrow {
+  margin: 0;
+}
+
+.nb-controls .controls-hint {
+  margin: .65rem 0 1rem;
+  line-height: 1.55;
+}
+
+.nb-presets {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .5rem;
+  margin-bottom: 1.25rem;
+}
+
+.nb-preset {
+  min-height: 2.5rem;
+  padding: .45rem .55rem;
+  color: var(--color-primary);
+  background: rgb(255 255 255 / 60%);
+  border: 1px solid var(--color-border);
+  border-radius: .5rem;
+  font: inherit;
+  font-size: .78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.nb-preset:hover,
+.nb-preset:focus-visible {
+  background: #FFFFFF;
+  border-color: var(--color-accent);
+}
+
+.nb-word-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .45rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.nb-word-options legend {
+  margin-bottom: .65rem;
+  color: var(--color-text);
+  font-size: .88rem;
+  font-weight: 750;
+}
+
+.nb-word-options label {
+  display: flex;
+  min-width: 0;
+  min-height: 2.35rem;
+  align-items: center;
+  gap: .5rem;
+  padding: .4rem .55rem;
+  color: var(--color-text);
+  background: rgb(255 255 255 / 58%);
+  border: 1px solid var(--color-border);
+  border-radius: .5rem;
+  font-size: .82rem;
+  cursor: pointer;
+}
+
+.nb-word-options label:has(input:checked) {
+  background: #FFFFFF;
+  border-color: var(--color-accent);
+  box-shadow: inset 0 0 0 1px var(--color-accent);
+}
+
+.nb-word-options input {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+  margin: 0;
+  accent-color: var(--color-accent);
+}
+
+.nb-controls .reset-button {
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+
+.nb-explanation {
+  margin: clamp(2.5rem, 6vw, 4rem) 0 0;
+}
+
+@media (max-width: 760px) {
+  .nb-chart-wrap {
+    height: 300px;
+  }
+
+  .nb-controls {
+    border-top: 1px solid var(--color-border);
+    border-left: 0;
+  }
+}
+
+@media (max-width: 440px) {
+  .nb-chart-wrap {
+    height: 260px;
+  }
+
+  .nb-word-options {
+    gap: .35rem;
+  }
+
+  .nb-word-options label {
+    padding-inline: .4rem;
+    font-size: .77rem;
+  }
+}
