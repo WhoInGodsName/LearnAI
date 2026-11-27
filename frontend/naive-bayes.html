@@ -95,10 +95,19 @@
         <p>Naive Bayes is a <strong>supervised</strong> Machine Learning model. It learns from emails that have already been labelled as spam or normal, then uses the words in a new email to estimate which class it belongs to.</p>
 
         <h3>Learning from labelled emails</h3>
-        <p>The model looks at how often each word appears in spam emails and normal emails. It also learns the prior probability of each class: how common spam and normal emails are in the examples it was given. In this demo the two classes start equally likely, so the prior probability for each is 50%.</p>
+        <p>The model looks at how often each word appears in spam emails and normal emails. It also learns the prior probability of each class: how common 
+          spam and normal emails are in the examples it was given. In this demo the two classes start equally likely, so the prior probability for each is 50%.</p>
+
+        <h3>What is a bag of words?</h3>  
+        <p>The Naive Bayes classifier uses the 'bag of words' method.  What does this mean?  The bag of words method is the method of counting the amount of times a word
+          appears (in this case in either the spam or normal emails) and adding it to a vector.  Each position in this vector correlates to a word that appears in the emails.  While each
+          of the values at that particular index, is the amount that word appears.  This is one of the most rudementary Natural Language Processing (NLP) methods.
+        </p>
 
         <h3>Calculating the probability</h3>
-        <p>When a new email arrives, the model starts with each class's prior probability. Then it considers each selected word and asks how likely that word is in spam compared with normal email. These likelihoods are combined to estimate the probability of each class: \( P(C \mid w_1,\ldots,w_n) \propto P(C)\prod_{i=1}^{n}P(w_i\mid C) \). The probabilities for spam and normal are normalised so they add up to 100%.</p>
+        <p>When a new email arrives, the model starts with each class's prior probability. Then it considers each selected word and asks how likely that word is in 
+          spam compared with normal email. These likelihoods are combined to estimate the probability of each 
+          class: \( P(C \mid w_1,\ldots,w_n) \propto P(C)\prod_{i=1}^{n}P(w_i\mid C) \). The probabilities for spam and normal are normalised so they add up to 100%.</p>
         <p>The model uses <strong>Laplace smoothing</strong> by adding one to each word count. This gives a word that was not seen in a class a small probability, rather than letting it reduce that class's probability to zero.</p>
 
         <h3>Why is it called “naive”?</h3>
