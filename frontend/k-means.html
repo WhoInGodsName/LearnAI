@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#F3E0DC">
+    <meta name="description" content="A starter lesson page for exploring K-means clustering.">
+    <title>Birds of the Same Feather — TrialsAndErrors.Academy</title>
+    <link rel="stylesheet" href="style/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/linearRegression.css">
+    <link rel="stylesheet" href="style/kMeans.css">
+    <script src="ML/KMeans.js" defer></script>
+    <script src="nav.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="site-logo" href="index.html" aria-label="Trials and Errors Academy home">Trials<span>and</span><span class="logo-glitch" data-text="Errors">Errors</span>.academy</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation menu">
+        <svg class="nav-icon nav-icon-menu" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg><svg class="nav-icon nav-icon-close" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      </button>
+      <nav id="site-nav" aria-label="Main navigation">
+        <a href="index.html#home">Home</a>
+        <a href="explore.html" aria-current="page">Explore</a>
+        <a href="books.html">Books</a>
+        <a href="index.html#about">About</a>
+      </nav>
+    </header>
+
+    <main class="regression-main kmeans-main">
+      <a class="back-link" href="explore.html">← Back to explore</a>
+      <section class="lesson-intro">
+        <p class="eyebrow">K-means lesson · Clustering</p>
+        <h1>Birds of the <span>same feather</span></h1>
+        <p>K-means groups data points by similarity. Choose how many clusters you want, then watch the algorithm assign points to the nearest centroid and move each centroid to the centre of its group.</p>
+      </section>
+
+      <section class="playground kmeans-playground" aria-label="Interactive K-means clustering and elbow graph">
+        <div class="graph-panel">
+          <div class="graph-heading">
+            <div>
+              <p class="eyebrow">K-means clustering</p>
+              <h2>Move the flock</h2>
+            </div>
+            <output id="selected-k" class="equation" aria-live="polite">K = 4</output>
+          </div>
+          <div class="kmeans-graphs">
+            <section class="kmeans-chart-card" aria-labelledby="cluster-plot-title">
+              <div class="kmeans-chart-heading">
+                <h3 id="cluster-plot-title">Point assignments</h3>
+                <p>Points join their nearest centre</p>
+              </div>
+              <div class="chart-wrap kmeans-chart-wrap">
+                <canvas id="kmeans-scatter" role="img" aria-label="Scatter plot showing points assigned to their nearest K-means centroid."></canvas>
+              </div>
+              <div class="kmeans-legend" id="cluster-legend" aria-label="Cluster colours"></div>
+            </section>
+
+            <section class="kmeans-chart-card" aria-labelledby="elbow-plot-title">
+              <div class="kmeans-chart-heading">
+                <h3 id="elbow-plot-title">Find the elbow</h3>
+                <p>Within-cluster variance (WCSS)</p>
+              </div>
+              <div class="chart-wrap kmeans-chart-wrap">
+                <canvas id="kmeans-elbow" role="img" aria-label="Elbow graph showing within-cluster variance for different numbers of clusters."></canvas>
+              </div>
+              <p class="kmeans-plot-note">The selected K is highlighted.</p>
+            </section>
+          </div>
+        </div>
+
+        <aside class="controls-panel kmeans-controls" aria-label="K-means controls">
+          <h2 class="eyebrow">Choose K</h2>
+          <p class="controls-hint">K is the number of clusters. Move the slider to regroup the points and see how the within-cluster variance changes.</p>
+          <label class="range-control" for="k-slider">
+            <span class="range-label">Number of clusters <em>K</em><output id="k-slider-value" for="k-slider">4</output></span>
+            <input id="k-slider" type="range" min="1" max="8" step="1" value="4">
+            <span class="range-ends"><span>1</span><span>4</span><span>8</span></span>
+            <span class="control-explanation">Each step adds one centroid and reassigns every point to its nearest centre.</span>
+          </label>
+          <div class="kmeans-metric">
+            <span>Selected K</span><strong id="k-summary">4 clusters</strong>
+          </div>
+          <div class="kmeans-metric">
+            <span>Within-cluster error (WCSS)</span><strong id="wcss-value">—</strong>
+          </div>
+          <button class="reset-button" id="kmeans-reset" type="button">Reset to K = 4</button>
+        </aside>
+      </section>
+
+      <section class="kmeans-explanation">
+        <h2>What does “same feather” mean?</h2>
+        <p>K-means tries to group similar data points together. You choose <em>K</em>, the number of clusters, and the algorithm searches for <em>K</em> centres that represent the groups. Each point belongs to the cluster with the nearest centre.</p>
+        <p>After assigning the points, K-means moves each centre to the average position of the points assigned to it. It repeats these two steps until the assignments stop changing much.</p>
+        <h3>How does the elbow graph help?</h3>
+        <p>The elbow graph plots the within-cluster sum of squares (WCSS) for each value of K. WCSS measures how far points are from their assigned centres, so it always gets smaller as more clusters are added. Look for the bend where the improvement starts to level off: beyond that point, extra clusters explain much less.</p>
+      </section>
+    </main>
+  </body>
+</html>
