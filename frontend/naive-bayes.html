@@ -108,7 +108,9 @@
         <p>When a new email arrives, the model starts with each class's prior probability. Then it considers each selected word and asks how likely that word is in 
           spam compared with normal email. These likelihoods are combined to estimate the probability of each 
           class: \( P(C \mid w_1,\ldots,w_n) \propto P(C)\prod_{i=1}^{n}P(w_i\mid C) \). The probabilities for spam and normal are normalised so they add up to 100%.</p>
-        <p>The model uses <strong>Laplace smoothing</strong> by adding one to each word count. This gives a word that was not seen in a class a small probability, rather than letting it reduce that class's probability to zero.</p>
+        <p>The model uses <strong>Laplace smoothing</strong> by adding one to each word count. This means that each word is defaulted to 1.  Why do we do this?  We do This
+        due to the fact that if simply one of the words in a sample email has exactly zero instances in the bag of words provided, it would bring the samples probability to zero for 
+      the spam or normal classification (depending on what was being calculated for).  incrementing each word by 1 at the very start mitigates this issue.</p>
 
         <h3>Why is it called “naive”?</h3>
         <p>Naive Bayes makes the simplifying assumption that each word contributes independently once we know whether the email is spam or normal. In the real world, its not so simple.  Words rely on each other to provide important context.
